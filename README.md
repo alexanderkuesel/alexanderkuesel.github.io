@@ -16,8 +16,8 @@ assets/img/             put your photo / social preview image here
 ## Page sections
 
 `What I do` (services) → `Selected projects` → `Speaking & conferences` →
-`Background` → `Contact`. Each is marked in `index.html` with a banner comment
-like `<!-- ============ PROJECTS ============ -->`.
+`Background` → `Outside Work` → `Contact`. Each is marked in `index.html` with a
+banner comment like `<!-- ============ PROJECTS ============ -->`.
 
 ## Editing
 
@@ -26,6 +26,8 @@ like `<!-- ============ PROJECTS ============ -->`.
 - **Add a project**: copy an `<article class="project">…</article>` block. The
   `project__org` line is the small uppercase label above the title.
 - **Add a talk**: copy an `<li class="talk">…</li>` in the speaking section.
+- **Add something to Outside Work**: copy an `<article class="pursuit">…</article>`
+  block. Same card as a project, minus the orange rule down the side.
 - **Colours and spacing**: the custom properties in the `:root` block at the top of
   `assets/css/styles.css`. The palette is defined three times — once for light, then
   again under `prefers-color-scheme: dark` and under `[data-theme="dark"]` for the
