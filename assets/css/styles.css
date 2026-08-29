@@ -2,21 +2,28 @@
    Alexander Kuesel — personal site
    Design tokens first, then layout, then components.
    Light is the base palette; dark overrides only the tokens.
+
+   Accent orange is #EC6530, borrowed from the Rhizomatix site,
+   along with its rgba(236, 101, 48, …) tints. Light mode uses a
+   deeper orange for anything text-sized, since the brand orange
+   doesn't clear 4.5:1 on a pale background.
    ========================================================= */
 
 :root {
   /* colour */
-  --bg:            #fbfaf8;
-  --bg-alt:        #f3f0eb;
+  --bg:            #fbfaf9;
+  --bg-alt:        #f4f2ef;
   --surface:       #ffffff;
-  --border:        #e2ddd4;
-  --text:          #1e1c19;
-  --text-soft:     #57524a;
-  --text-faint:    #857e73;
-  --accent:        #a8531b;
-  --accent-soft:   #f4e6d9;
-  --accent-text:   #ffffff;
-  --shadow:        0 1px 2px rgba(30, 28, 25, .05), 0 8px 24px -12px rgba(30, 28, 25, .18);
+  --border:        #e4e0da;
+  --text:          #141210;
+  --text-soft:     #54504a;
+  --text-faint:    #767068;
+  --accent:        #b35200;                      /* text-sized accent, 4.9:1 on --bg */
+  --accent-bright: #ec6530;                      /* the brand orange: fills and rules */
+  --accent-soft:   rgba(236, 101, 48, .10);      /* chip fills, hero glow */
+  --accent-line:   rgba(236, 101, 48, .30);      /* chip and divider hairlines */
+  --accent-text:   #111111;                      /* text on an orange fill */
+  --shadow:        0 1px 2px rgba(20, 18, 16, .05), 0 8px 24px -12px rgba(20, 18, 16, .18);
 
   /* type */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -29,34 +36,39 @@
   --section-y: clamp(3.5rem, 8vw, 6.5rem);
 }
 
+/* Dark mode goes properly black, and the brand orange carries the accents. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:          #16150f;
-    --bg-alt:      #1e1c16;
-    --surface:     #221f18;
-    --border:      #35312a;
-    --text:        #f2eee6;
-    --text-soft:   #c2bbae;
-    --text-faint:  #918a7d;
-    --accent:      #e8a05c;
-    --accent-soft: #2e2519;
-    --accent-text: #16150f;
-    --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .6);
+    --bg:            #050505;
+    --bg-alt:        #0b0805;
+    --surface:       #120900;
+    --border:        rgba(236, 101, 48, .20);
+    --text:          #f2efe9;
+    --text-soft:     #b9b2a8;
+    --text-faint:    #8d857a;
+    --accent:        #ec6530;
+    --accent-bright: #ec6530;
+    --accent-soft:   rgba(236, 101, 48, .12);
+    --accent-line:   rgba(236, 101, 48, .34);
+    --accent-text:   #0a0603;
+    --shadow:        0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px -12px rgba(0, 0, 0, .8);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg:          #16150f;
-  --bg-alt:      #1e1c16;
-  --surface:     #221f18;
-  --border:      #35312a;
-  --text:        #f2eee6;
-  --text-soft:   #c2bbae;
-  --text-faint:  #918a7d;
-  --accent:      #e8a05c;
-  --accent-soft: #2e2519;
-  --accent-text: #16150f;
-  --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .6);
+  --bg:            #050505;
+  --bg-alt:        #0b0805;
+  --surface:       #120900;
+  --border:        rgba(236, 101, 48, .20);
+  --text:          #f2efe9;
+  --text-soft:     #b9b2a8;
+  --text-faint:    #8d857a;
+  --accent:        #ec6530;
+  --accent-bright: #ec6530;
+  --accent-soft:   rgba(236, 101, 48, .12);
+  --accent-line:   rgba(236, 101, 48, .34);
+  --accent-text:   #0a0603;
+  --shadow:        0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px -12px rgba(0, 0, 0, .8);
 }
 
 /* ---------- base ---------- */
@@ -93,7 +105,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 a:hover { text-decoration-thickness: 2px; }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-bright);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -106,7 +118,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .skip-link {
   position: absolute; left: 1rem; top: -4rem; z-index: 100;
-  background: var(--accent); color: var(--accent-text);
+  background: var(--accent-bright); color: var(--accent-text);
   padding: .6rem 1rem; border-radius: 0 0 8px 8px; text-decoration: none;
   transition: top .15s ease;
 }
@@ -166,7 +178,7 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 2px solid transparent;
 }
 .nav__menu a:hover { color: var(--text); }
-.nav__menu a.is-active { color: var(--text); border-bottom-color: var(--accent); }
+.nav__menu a.is-active { color: var(--text); border-bottom-color: var(--accent-bright); }
 
 .nav__toggle { display: none; }
 
@@ -289,7 +301,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.btn--primary { background: var(--accent-bright); border-color: var(--accent-bright); color: var(--accent-text); }
 .btn--primary:hover { color: var(--accent-text); filter: brightness(1.06); }
 
 /* ---------- section furniture ---------- */
@@ -332,12 +344,11 @@ a:hover { text-decoration-thickness: 2px; }
 .tags li {
   font-size: .8rem;
   color: var(--text-soft);
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
   border-radius: 999px;
   padding: .15rem .65rem;
 }
-.section--alt .tags li { background: var(--bg); }
 
 /* ---------- services ---------- */
 
@@ -383,7 +394,7 @@ a:hover { text-decoration-thickness: 2px; }
 .project {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent-bright);
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow);
@@ -456,7 +467,7 @@ a:hover { text-decoration-thickness: 2px; }
   translate: -50% -50%;
   width: 4.5rem; height: 4.5rem;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-bright);
   display: grid;
   place-items: center;
   box-shadow: 0 6px 24px rgba(0, 0, 0, .45);
@@ -504,7 +515,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .list { display: grid; gap: 1.1rem; }
 .list__item { padding-left: 1rem; border-left: 2px solid var(--border); }
-.list__item:hover { border-left-color: var(--accent); }
+.list__item:hover { border-left-color: var(--accent-bright); }
 .list__title { font-weight: 600; margin: 0 0 .15rem; }
 .list__meta { font-size: .88rem; color: var(--text-faint); margin: 0; }
 
@@ -514,13 +525,13 @@ a:hover { text-decoration-thickness: 2px; }
 .contact__text { max-width: var(--measure); color: var(--text-soft); font-size: 1.075rem; margin-bottom: 1.75rem; }
 .contact__links { display: flex; flex-wrap: wrap; gap: .75rem; }
 .section--contact .btn { background: var(--bg); }
-.section--contact .btn--primary { background: var(--accent); }
+.section--contact .btn--primary { background: var(--accent-bright); }
 
 /* ---------- footer ---------- */
 
 .site-footer {
   padding-block: 2.5rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--accent-line);
   font-size: .88rem;
   color: var(--text-faint);
 }

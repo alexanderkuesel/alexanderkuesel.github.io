@@ -27,9 +27,24 @@ like `<!-- ============ PROJECTS ============ -->`.
   `project__org` line is the small uppercase label above the title.
 - **Add a talk**: copy an `<li class="talk">…</li>` in the speaking section.
 - **Colours and spacing**: the custom properties in the `:root` block at the top of
-  `assets/css/styles.css`. `--accent` shifts the whole feel of the page; the dark
-  palette is defined twice below it (once for the system preference, once for the
-  manual toggle) — change both.
+  `assets/css/styles.css`. The palette is defined three times — once for light, then
+  again under `prefers-color-scheme: dark` and under `[data-theme="dark"]` for the
+  manual toggle — so a colour change needs making in all three.
+
+  The accent orange is `#EC6530`, taken from the Rhizomatix site, along with its
+  `rgba(236, 101, 48, …)` tints. It splits into two tokens because the brand orange
+  only reaches 3.1:1 on a pale background, short of the 4.5:1 needed for readable text:
+
+  | token | use |
+  | --- | --- |
+  | `--accent` | anything text-sized — links, labels, small caps. Deep orange (`#b35200`) in light, brand orange in dark |
+  | `--accent-bright` | always `#EC6530`: button fills, the play button, the rule down the left of a project card |
+  | `--accent-soft` | 10–12% orange wash — chip fills and the hero glow |
+  | `--accent-line` | 30% orange hairlines — chip borders, the footer rule |
+  | `--accent-text` | near-black label sitting on an orange fill |
+
+  If you swap the orange, keep that split: check any new text-sized colour against
+  the background at 4.5:1 before using it.
 - **Phone number**: there is a commented-out `<li>` in the contact section.
 - **Social preview**: drop a 1200×630 image at `assets/img/og-image.png` and update
   the `og:image` / canonical URLs in `<head>` once the site has a domain.
