@@ -10,7 +10,7 @@ no dependencies, no framework.
 index.html              the whole page; every bit of copy lives here
 assets/css/styles.css   design tokens at the top, then layout and components
 assets/js/main.js       theme toggle, mobile menu, scroll-spy, video embed, footer year
-assets/img/             put your photo / social preview image here
+assets/img/             photos: web-sized versions plus the originals
 ```
 
 ## Page sections
@@ -46,8 +46,22 @@ like `<!-- ============ PROJECTS ============ -->`.
   If you swap the orange, keep that split: check any new text-sized colour against
   the background at 4.5:1 before using it.
 - **Phone number**: there is a commented-out `<li>` in the contact section.
-- **Social preview**: drop a 1200×630 image at `assets/img/og-image.png` and update
-  the `og:image` / canonical URLs in `<head>` once the site has a domain.
+- **Social preview**: `og:image` currently points at the portrait. For a proper
+  card, drop a 1200×630 image in `assets/img/` and point `og:image` at it; the
+  URLs in `<head>` want making absolute once the site has a domain.
+
+## Photos
+
+| file | used for |
+| --- | --- |
+| `alexander-kuesel.jpg` | hero portrait, 800×800 |
+| `ovation-users-conference.jpg` | speaking section, 1600×882 |
+| `IMG_3872.JPG`, `IMG_0173.JPEG` | the originals, kept as sources; not referenced by the page |
+
+The web versions are cropped and resized down from the originals (3.2 MB → ~150 KB
+each) and re-encoded, which also strips the EXIF — the original conference photo
+carried GPS coordinates. If you replace a photo, do the same rather than pointing
+the page at a multi-megabyte original.
 
 ## The video embed
 
