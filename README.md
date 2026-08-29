@@ -1,34 +1,64 @@
 # alkue
 
-Personal "about me" site for Alexander Kuesel Montealegre. Plain HTML, CSS and a
-little vanilla JavaScript — no build step, no dependencies, no framework.
+Personal site for Alexander Kuesel Montealegre — a services and project showcase
+rather than a CV. Plain HTML, CSS and a little vanilla JavaScript: no build step,
+no dependencies, no framework.
 
 ## Files
 
 ```
 index.html              the whole page; every bit of copy lives here
 assets/css/styles.css   design tokens at the top, then layout and components
-assets/js/main.js       theme toggle, mobile menu, scroll-spy, footer year
+assets/js/main.js       theme toggle, mobile menu, scroll-spy, video embed, footer year
 assets/img/             put your photo / social preview image here
 ```
 
+## Page sections
+
+`What I do` (services) → `Selected projects` → `Speaking & conferences` →
+`Background` → `Contact`. Each is marked in `index.html` with a banner comment
+like `<!-- ============ PROJECTS ============ -->`.
+
 ## Editing
 
-Open `index.html` and edit the text directly. Each section is marked with a
-comment (`<!-- ============ EXPERIENCE ============ -->`) so it's easy to find.
+- **Add a service**: copy an `<article class="service">…</article>` block and bump
+  the `service__num`.
+- **Add a project**: copy an `<article class="project">…</article>` block. The
+  `project__org` line is the small uppercase label above the title.
+- **Add a talk**: copy an `<li class="talk">…</li>` in the speaking section.
+- **Colours and spacing**: the custom properties in the `:root` block at the top of
+  `assets/css/styles.css`. `--accent` shifts the whole feel of the page; the dark
+  palette is defined twice below it (once for the system preference, once for the
+  manual toggle) — change both.
+- **Phone number**: there is a commented-out `<li>` in the contact section.
+- **Social preview**: drop a 1200×630 image at `assets/img/og-image.png` and update
+  the `og:image` / canonical URLs in `<head>` once the site has a domain.
 
-- **Add a job**: copy an entire `<li class="job">…</li>` block in the timeline
-  and change the dates, role, employer and bullet points.
-- **Add a skill group**: copy an `<article class="card">…</article>` block in the
-  skills section.
-- **Colours and spacing**: change the custom properties in the `:root` block at
-  the top of `assets/css/styles.css`. `--accent` is the one that shifts the whole
-  feel of the page; the dark palette is defined twice below it (once for the
-  system preference, once for the manual toggle) — change both.
-- **Phone number**: there's a commented-out `<li>` in the contact section if you
-  want it public.
-- **Social preview**: drop an image at `assets/img/og-image.png` (1200×630) and
-  update the `og:image` / canonical URLs in `<head>` once the site has a domain.
+## The video embed
+
+Embedded YouTube works on GitHub Pages — Pages serves static files and the embed
+is an ordinary iframe loaded by the visitor's browser.
+
+This page uses a click-to-load facade: it ships a thumbnail and a play button, and
+`main.js` swaps in the real `youtube-nocookie.com` iframe only when someone clicks.
+That keeps the page fast and avoids handing YouTube a cookie for visitors who never
+press play. Without JavaScript, a `<noscript>` link out to YouTube takes its place.
+
+To feature a different talk, change **both** the `data-video-id` on
+`<div class="video">` and the thumbnail `src`
+(`https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg`) — plus the `<noscript>` and
+"Watch on YouTube" links beside it.
+
+To use a plain always-loaded embed instead, replace the `<div class="video">…</div>`
+block with:
+
+```html
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+          title="Talk title" loading="lazy" allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+</div>
+```
 
 ## Preview locally
 
