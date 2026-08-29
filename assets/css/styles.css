@@ -251,6 +251,28 @@ a:hover { text-decoration-thickness: 2px; }
   background: radial-gradient(60rem 32rem at 12% -10%, var(--accent-soft), transparent 65%);
 }
 
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.hero__photo {
+  width: clamp(10rem, 20vw, 16.5rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-line);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 52rem) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__text { order: 2; }
+  .hero__photo { width: 8rem; margin-bottom: .5rem; }
+}
+
 .hero__eyebrow {
   font-family: var(--font-mono);
   font-size: .8rem;
@@ -264,7 +286,6 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: clamp(2.15rem, 6vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -.035em;
-  max-width: 12em;
   margin-bottom: 1.5rem;
   text-wrap: balance;
 }
@@ -485,6 +506,22 @@ a:hover { text-decoration-thickness: 2px; }
 
 .talk-feature__body .talk__title { font-size: 1.35rem; margin-bottom: .6rem; }
 
+.talk-photo {
+  margin: 0 0 2.5rem;
+}
+.talk-photo img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: block;
+}
+.talk-photo figcaption {
+  margin-top: .75rem;
+  font-size: .85rem;
+  color: var(--text-faint);
+}
+
 .talks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
@@ -573,7 +610,8 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- print ---------- */
 
 @media print {
-  .site-header, .theme-toggle, .skip-link, .hero__links, .contact__links, .video { display: none !important; }
+  .site-header, .theme-toggle, .skip-link, .hero__links, .contact__links, .video,
+  .talk-photo { display: none !important; }
   body { background: #fff; color: #000; }
   .section, .hero { padding-block: 1rem; }
   .service, .project, .talk, .pursuit { break-inside: avoid; box-shadow: none; }
