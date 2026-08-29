@@ -519,6 +519,39 @@ a:hover { text-decoration-thickness: 2px; }
 .list__title { font-weight: 600; margin: 0 0 .15rem; }
 .list__meta { font-size: .88rem; color: var(--text-faint); margin: 0; }
 
+/* ---------- outside work ---------- */
+
+.pursuits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+}
+
+/* same card as a project, without the orange rule down the side —
+   these sit alongside the professional work, not level with it */
+.pursuit {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.pursuit__meta {
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0;
+}
+.pursuit__title { font-size: 1.08rem; font-weight: 650; }
+.pursuit__text { color: var(--text-soft); font-size: .95rem; margin: 0; }
+.pursuit .tags { margin-top: auto; padding-top: .5rem; }
+
 /* ---------- contact ---------- */
 
 .section--contact { background: var(--bg-alt); }
@@ -543,7 +576,7 @@ a:hover { text-decoration-thickness: 2px; }
   .site-header, .theme-toggle, .skip-link, .hero__links, .contact__links, .video { display: none !important; }
   body { background: #fff; color: #000; }
   .section, .hero { padding-block: 1rem; }
-  .service, .project, .talk { break-inside: avoid; box-shadow: none; }
+  .service, .project, .talk, .pursuit { break-inside: avoid; box-shadow: none; }
   .services, .projects { display: block; }
   .service, .project { border: 0; padding: .5rem 0; }
 }
