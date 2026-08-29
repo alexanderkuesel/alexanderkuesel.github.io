@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexander Kuesel Montealegre — Industrial Automation &amp; Software</title>
-  <meta name="description" content="Alexander Kuesel Montealegre — engineering manager and product owner working at the seam between industrial control systems, IoT and modern software. Heredia, Costa Rica.">
+  <title>Alexander Kuesel Montealegre — Industrial Automation, Data &amp; Robotics</title>
+  <meta name="description" content="I help industrial teams get data off the plant floor and into decisions — SCADA architecture, industrial data pipelines, robotics and computer vision, and AI that holds up in a manufacturing environment.">
   <meta name="author" content="Alexander Kuesel Montealegre">
 
   <!-- Social preview. Replace the URL and image once the site has a domain. -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Alexander Kuesel Montealegre">
-  <meta property="og:description" content="Industrial automation, SCADA and software — Heredia, Costa Rica.">
+  <meta property="og:description" content="SCADA, industrial data, robotics and applied AI for manufacturing and power generation.">
   <meta property="og:image" content="assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -28,11 +28,10 @@
         <span class="sr-only">Menu</span>
       </button>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#beyond">Beyond work</a></li>
+        <li><a href="#services">What I do</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#speaking">Speaking</a></li>
+        <li><a href="#background">Background</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" type="button" title="Switch colour theme">
@@ -47,191 +46,112 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="top">
       <div class="wrap">
-        <p class="hero__eyebrow">Heredia, Costa Rica &middot; Milwaukee, Wisconsin</p>
-        <h1 class="hero__name">Alexander Kuesel<br>Montealegre</h1>
+        <p class="hero__eyebrow">Industrial automation &middot; Data &middot; Robotics</p>
+        <h1 class="hero__name">I get data off the plant floor &mdash; and back into it.</h1>
         <p class="hero__tagline">
-          I work at the seam between industrial control systems and modern software —
-          SCADA, robotics and IoT on one side, Python, cloud and ML on the other.
+          Eleven years between control rooms and software teams: SCADA architecture, industrial
+          data pipelines, robotics on the floor, and AI that survives contact with a real
+          manufacturing environment. Power generation and semiconductor fabs, at Emerson and Intel.
         </p>
         <ul class="hero__links">
-          <li><a class="btn btn--primary" href="mailto:atkm2891@gmail.com">Email me</a></li>
-          <li><a class="btn" href="https://www.linkedin.com/in/alexanderkuesel" rel="me noopener" target="_blank">LinkedIn</a></li>
-          <li><a class="btn" href="https://github.com/alexanderkuesel" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a class="btn btn--primary" href="#contact">Start a conversation</a></li>
+          <li><a class="btn" href="#projects">See the work</a></li>
         </ul>
+        <p class="hero__meta">
+          Alexander Kuesel Montealegre &middot; Heredia, Costa Rica &middot; working in English &amp; Spanish
+        </p>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
       <div class="wrap">
-        <h2 class="section__title">About</h2>
-        <div class="prose">
-          <p>
-            I&rsquo;m an electromechanical engineer who ended up spending his career translating between two
-            worlds that rarely speak the same language: the plant floor and the software team. For a decade
-            that meant distributed control systems &mdash; Ovation controllers, OPC, fault-tolerant design,
-            commissioning power plants across North and South America. More recently it has meant leading
-            engineers who wire robots, PLCs and vision models into the same data pipeline.
-          </p>
-          <p>
-            Most of my work has been about making industrial data useful: getting it out of proprietary systems,
-            into places where it can be modelled, and back into control loops where it changes what the plant
-            actually does. Lately that includes putting LLMs to work on manufacturing documentation and telemetry
-            without pretending they&rsquo;re a control system.
-          </p>
-          <p>
-            I&rsquo;m currently finishing a master&rsquo;s in mechanical engineering focused on energy management
-            at the Universidad de Costa Rica. Outside of work you&rsquo;ll usually find me on a trail &mdash;
-            teaching wilderness skills, mapping wildlife corridors, or chasing a signal on a handheld radio.
-          </p>
-        </div>
+        <h2 class="section__title">What I do</h2>
+        <p class="section__lead">
+          The common thread is the seam between operational technology and everything above it.
+          That's where projects usually stall, and it's the part I'm good at.
+        </p>
 
-        <ul class="facts">
-          <li class="fact"><span class="fact__num">11+</span><span class="fact__label">years in industrial automation</span></li>
-          <li class="fact"><span class="fact__num">5,000+</span><span class="fact__label">operators on platforms I owned</span></li>
-          <li class="fact"><span class="fact__num">2</span><span class="fact__label">native languages, EN &amp; ES</span></li>
-        </ul>
-      </div>
-    </section>
+        <div class="services">
 
-    <!-- ============ EXPERIENCE ============ -->
-    <section class="section section--alt" id="experience">
-      <div class="wrap">
-        <h2 class="section__title">Experience</h2>
-
-        <ol class="timeline">
-
-          <li class="job">
-            <p class="job__dates"><time datetime="2025-03">Mar 2025</time> &ndash; <time datetime="2025-12">Dec 2025</time></p>
-            <div class="job__body">
-              <h3 class="job__role">Software Engineering Manager, Industrial Automation &amp; Robotics</h3>
-              <p class="job__org">Intel <span class="job__place">&middot; Heredia, Costa Rica</span></p>
-              <ul class="job__points">
-                <li>Led a team of 8 software engineers across PLC, IoT and robotics integration pipelines, and owned their career growth, quarterly reviews and compensation.</li>
-                <li>Built and maintained a CI/CD pipeline for computer vision model validation and annotation.</li>
-                <li>Represented Intel at the Node-RED conference, presenting the team&rsquo;s use cases to 1,500+ attendees. <a class="link" href="https://youtu.be/JnYoIY9x7Ns" rel="noopener" target="_blank">Watch the talk &rarr;</a></li>
-                <li>Worked on coupling manufacturing ERP and MES to facilities SCADA for real-time closed-loop data integration and control.</li>
-                <li>Gave the first public demonstration of the SPOT robot in Costa Rica at the Intel AI Summit.</li>
-                <li>Helped build RAG-based document lookup chatbots for manufacturing teams.</li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="job">
-            <p class="job__dates"><time datetime="2022-11">Nov 2022</time> &ndash; <time datetime="2025-03">Mar 2025</time></p>
-            <div class="job__body">
-              <h3 class="job__role">Industrial Automation &amp; Robotics Product Owner</h3>
-              <p class="job__org">Intel <span class="job__place">&middot; Heredia, Costa Rica</span></p>
-              <ul class="job__points">
-                <li>Product manager for a distributed SCADA platform used by 5,000+ operators and technicians across Intel manufacturing facilities.</li>
-                <li>Led a cross-BU selection process for a new database technology adopted across Intel facilities &mdash; vendor management, RFI/RFP, technical negotiation support and contracting.</li>
-                <li>Architected the robotics data ingestion platform that brings images and metadata from Boston Dynamics SPOT robots doing rounds and readings on the floor.</li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="job">
-            <p class="job__dates"><time datetime="2019-05">May 2019</time> &ndash; <time datetime="2022-11">Nov 2022</time></p>
-            <div class="job__body">
-              <h3 class="job__role">Senior Distributed Control System Consultant</h3>
-              <p class="job__org">Emerson Electric <span class="job__place">&middot; San Jos&eacute;, Costa Rica</span></p>
-              <ul class="job__points">
-                <li>Technical lead for a department of 35+ engineers and the go-to expert on Ovation controllers, OPC and fault-tolerant system design.</li>
-                <li>Became the bridge between product support and software development &mdash; troubleshooting C++ code and monitoring the performance of new application releases.</li>
-                <li>Founded and edited the technical content team producing bulletins for 1,000+ field service and technical sales engineers.</li>
-                <li>Co-authored root cause analysis reports for compliance and legal filings, working alongside principal engineers and legal counsel on potential liability cases.</li>
-                <li>Presented on hardware controllers at the Southern Company Technical Conference (300+ engineers) and on time synchronisation in distributed systems at the Ovation Users Conference.</li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="job">
-            <p class="job__dates"><time datetime="2014-11">Nov 2014</time> &ndash; <time datetime="2019-05">May 2019</time></p>
-            <div class="job__body">
-              <h3 class="job__role">Distributed Control System Team Lead</h3>
-              <p class="job__org">Emerson Electric <span class="job__place">&middot; San Jos&eacute;, Costa Rica</span></p>
-              <ul class="job__points">
-                <li>Managed and mentored a team of 8 technical support engineers.</li>
-                <li>Department expert on the OPC protocol, collaborating with software development through the early stages of its integration into Emerson&rsquo;s own product.</li>
-                <li>Involved in every stage of a SCADA project: sales support, proposal review, design, FAT/SAT, commissioning, maintenance and ongoing support.</li>
-                <li>Commissioned systems on site at power plants across the Americas &mdash; a reactive power mitigation control scheme at Copper Mountain Solar, a multi-phase SCADA upgrade at AES Ventanas, and DCS virtualisation for NV Energy starting at Tracy Generating Station.</li>
-              </ul>
-            </div>
-          </li>
-
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
-      <div class="wrap">
-        <h2 class="section__title">What I work with</h2>
-        <div class="cards">
-
-          <article class="card">
-            <h3 class="card__title">Control &amp; SCADA</h3>
+          <article class="service">
+            <p class="service__num">01</p>
+            <h3 class="service__title">SCADA architecture &amp; modernisation</h3>
+            <p class="service__text">
+              Designing, upgrading and virtualising distributed control systems without taking
+              production down. Fault-tolerant design, redundancy strategy, migration planning,
+              FAT/SAT, commissioning and the unglamorous work of making an upgrade survive its
+              first bad day.
+            </p>
             <ul class="tags">
-              <li>SCADA architecture</li>
-              <li>Emerson Ovation</li>
-              <li>Rockwell FactoryTalk</li>
-              <li>Inductive Automation Ignition</li>
-              <li>Fault-tolerant design</li>
+              <li>Emerson Ovation</li><li>Rockwell FactoryTalk</li><li>Ignition</li><li>Virtualisation</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">Industrial comms</h3>
+          <article class="service">
+            <p class="service__num">02</p>
+            <h3 class="service__title">Industrial data pipelines &amp; IIoT</h3>
+            <p class="service__text">
+              Getting data out of proprietary systems and into places where it can actually be used
+              &mdash; historians, lakes, models &mdash; then closing the loop back to control. Edge
+              to cloud, protocol translation, and the contextualisation that makes a tag mean
+              something.
+            </p>
             <ul class="tags">
-              <li>OPC</li>
-              <li>MQTT</li>
-              <li>Modbus</li>
-              <li>DNP3</li>
-              <li>LoRaWAN</li>
+              <li>OPC</li><li>MQTT</li><li>Modbus</li><li>DNP3</li><li>LoRaWAN</li><li>Azure IoT Edge/Hub</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">Software &amp; ML</h3>
+          <article class="service">
+            <p class="service__num">03</p>
+            <h3 class="service__title">Robotics &amp; computer vision on the floor</h3>
+            <p class="service__text">
+              Autonomous inspection rounds, image and metadata ingestion at fleet scale, and the
+              validation pipeline that keeps a vision model honest once it leaves the notebook.
+              From first demo to something operations will actually rely on.
+            </p>
             <ul class="tags">
-              <li>Python</li>
-              <li>PyTorch</li>
-              <li>OpenCV / PIL</li>
-              <li>FastAPI</li>
-              <li>LangChain &amp; RAG</li>
-              <li>Node-RED</li>
+              <li>Boston Dynamics SPOT</li><li>PyTorch</li><li>OpenCV</li><li>Annotation &amp; CI/CD</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">Cloud &amp; platform</h3>
+          <article class="service">
+            <p class="service__num">04</p>
+            <h3 class="service__title">Applied AI for manufacturing</h3>
+            <p class="service__text">
+              RAG assistants over procedures, manuals and specifications; LLMs wired into industrial
+              data pipelines where they help &mdash; and kept out of the places where a deterministic
+              control system belongs. Realistic scoping is most of the value here.
+            </p>
             <ul class="tags">
-              <li>Azure AI Studio</li>
-              <li>IoT Edge / IoT Hub</li>
-              <li>Event Hubs</li>
-              <li>Blob Storage</li>
-              <li>Kubernetes</li>
-              <li>Rancher</li>
+              <li>RAG</li><li>LangChain</li><li>Node-RED</li><li>Azure AI Studio</li><li>FastAPI</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">Leading the work</h3>
+          <article class="service">
+            <p class="service__num">05</p>
+            <h3 class="service__title">Technology selection &amp; vendor management</h3>
+            <p class="service__text">
+              Running a selection process that holds up to scrutiny: requirements, RFI/RFP,
+              structured evaluation, proof-of-concept design, and technical support through
+              contracting and negotiation. Useful when the decision has to outlive the people
+              who made it.
+            </p>
             <ul class="tags">
-              <li>Product ownership</li>
-              <li>Roadmapping</li>
-              <li>Stakeholder management</li>
-              <li>RFI / RFP</li>
-              <li>OKR tracking</li>
+              <li>RFI / RFP</li><li>Vendor evaluation</li><li>Roadmapping</li><li>OKR tracking</li>
             </ul>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">For fun</h3>
+          <article class="service">
+            <p class="service__num">06</p>
+            <h3 class="service__title">Teams, training &amp; technical content</h3>
+            <p class="service__text">
+              Building and leading engineering teams across PLC, IoT and robotics, plus the
+              technical writing and training that scales expertise past the few people who hold
+              it &mdash; bulletins, internal documentation, conference talks and workshops.
+            </p>
             <ul class="tags">
-              <li>Meshtastic</li>
-              <li>Ham radio</li>
-              <li>The Things Network</li>
+              <li>Team leadership</li><li>Mentoring</li><li>Technical writing</li><li>Public speaking</li>
             </ul>
           </article>
 
@@ -239,27 +159,232 @@
       </div>
     </section>
 
-    <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
-    <section class="section section--alt" id="education">
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section--alt" id="projects">
       <div class="wrap">
+        <h2 class="section__title">Selected projects</h2>
+        <p class="section__lead">
+          Work done as an employee of the organisations named. Details are limited to what's
+          already public.
+        </p>
+
+        <div class="projects">
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Product owner</p>
+            <h3 class="project__title">Distributed SCADA platform for 5,000+ operators</h3>
+            <p class="project__text">
+              Owned the roadmap for the SCADA platform used by operators and technicians across
+              Intel manufacturing facilities &mdash; balancing site-specific demands against one
+              coherent platform, and keeping a system that people depend on every shift moving
+              forward.
+            </p>
+            <ul class="tags"><li>SCADA</li><li>Product ownership</li><li>Multi-site</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Architect</p>
+            <h3 class="project__title">Robotics data ingestion for SPOT fleets</h3>
+            <p class="project__text">
+              Architected the platform that brings images and metadata off Boston Dynamics SPOT
+              robots doing autonomous rounds and readings in manufacturing facilities, and lands
+              them somewhere the rest of the stack can use.
+            </p>
+            <ul class="tags"><li>Robotics</li><li>Data ingestion</li><li>Azure</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Engineering manager</p>
+            <h3 class="project__title">CI/CD for computer vision model validation</h3>
+            <p class="project__text">
+              Built and maintained the pipeline that validates and annotates computer vision models
+              &mdash; so a model change is a reviewable, testable event rather than a hopeful
+              deployment.
+            </p>
+            <ul class="tags"><li>PyTorch</li><li>Annotation</li><li>CI/CD</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Engineering manager</p>
+            <h3 class="project__title">RAG document assistants for manufacturing teams</h3>
+            <p class="project__text">
+              Helped build retrieval-augmented chatbots that let manufacturing teams ask questions
+              of their own documentation and get answers traceable back to the source document.
+            </p>
+            <ul class="tags"><li>RAG</li><li>LangChain</li><li>Azure AI Studio</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Engineering manager</p>
+            <h3 class="project__title">ERP and MES coupled to facilities SCADA</h3>
+            <p class="project__text">
+              Ongoing work to connect manufacturing ERP and MES to facilities SCADA for real-time,
+              closed-loop data integration and control &mdash; the systems that traditionally only
+              meet in a spreadsheet at the end of the month.
+            </p>
+            <ul class="tags"><li>ERP / MES</li><li>Closed-loop control</li><li>Integration</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Intel &middot; Selection lead</p>
+            <h3 class="project__title">Cross-BU database technology selection</h3>
+            <p class="project__text">
+              Led a cross-business-unit process to pick the database technology now used across Intel
+              facilities: requirements, RFI/RFP, vendor management, and technical support through
+              negotiation and contracting.
+            </p>
+            <ul class="tags"><li>RFI / RFP</li><li>Vendor management</li><li>Architecture</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Emerson &middot; NV Energy</p>
+            <h3 class="project__title">DCS virtualisation programme</h3>
+            <p class="project__text">
+              Led the project to virtualise distributed control system infrastructure for NV Energy,
+              starting at Tracy Generating Station &mdash; consolidating hardware in a live
+              generating environment where downtime isn't an option.
+            </p>
+            <ul class="tags"><li>Ovation</li><li>Virtualisation</li><li>Power generation</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Emerson &middot; AES Ventanas</p>
+            <h3 class="project__title">Multi-phase SCADA system upgrade</h3>
+            <p class="project__text">
+              Led a phased SCADA upgrade at the AES Ventanas plant, sequencing the work so the
+              station kept running while the control system underneath it changed.
+            </p>
+            <ul class="tags"><li>SCADA upgrade</li><li>Commissioning</li><li>Phased migration</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Emerson &middot; Copper Mountain Solar</p>
+            <h3 class="project__title">Reactive power mitigation control scheme</h3>
+            <p class="project__text">
+              Implemented a reactive power mitigation control scheme on site at one of the larger
+              solar generating facilities in the United States.
+            </p>
+            <ul class="tags"><li>Control schemes</li><li>Solar</li><li>On-site commissioning</li></ul>
+          </article>
+
+          <article class="project">
+            <p class="project__org">Emerson &middot; Founder &amp; editor</p>
+            <h3 class="project__title">Technical content programme for 1,000+ engineers</h3>
+            <p class="project__text">
+              Founded and edited the technical content development team producing bulletins for
+              field service and technical sales engineers worldwide &mdash; turning hard-won
+              troubleshooting knowledge into something the whole organisation could use.
+            </p>
+            <ul class="tags"><li>Technical writing</li><li>Knowledge transfer</li><li>Editing</li></ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPEAKING & CONFERENCES ============ -->
+    <section class="section" id="speaking">
+      <div class="wrap">
+        <h2 class="section__title">Speaking &amp; conferences</h2>
+        <p class="section__lead">
+          I like explaining industrial systems to rooms that don't all share the same vocabulary.
+        </p>
+
+        <!-- Featured talk: click-to-load YouTube embed (nothing loads from YouTube until played) -->
+        <div class="talk-feature">
+          <div class="video"
+               data-video-id="JnYoIY9x7Ns"
+               data-video-title="Alexander Kuesel at Node-RED Con">
+            <button class="video__button" type="button">
+              <img class="video__thumb"
+                   src="https://i.ytimg.com/vi/JnYoIY9x7Ns/maxresdefault.jpg"
+                   alt="" loading="lazy" width="1280" height="720">
+              <span class="video__play" aria-hidden="true"></span>
+              <span class="sr-only">Play the Node-RED Con talk on YouTube</span>
+            </button>
+            <noscript>
+              <a class="video__noscript" href="https://www.youtube.com/watch?v=JnYoIY9x7Ns" rel="noopener" target="_blank">Watch the talk on YouTube</a>
+            </noscript>
+          </div>
+          <div class="talk-feature__body">
+            <p class="talk__meta">Node-RED Con &middot; 1,500+ attendees</p>
+            <h3 class="talk__title">Industrial automation use cases at Intel</h3>
+            <p class="talk__text">
+              Representing Intel at the Node-RED conference to walk through how our team used
+              Node-RED across PLC, IoT and robotics integration work in real manufacturing
+              facilities.
+            </p>
+            <p><a class="link" href="https://www.youtube.com/watch?v=JnYoIY9x7Ns" rel="noopener" target="_blank">Watch on YouTube &rarr;</a></p>
+          </div>
+        </div>
+
+        <ul class="talks">
+          <li class="talk">
+            <p class="talk__meta">Intel AI Summit &middot; Costa Rica</p>
+            <h3 class="talk__title">First public SPOT demonstration in Costa Rica</h3>
+            <p class="talk__text">Presented the first public demonstration of the Boston Dynamics SPOT robot in the country.</p>
+          </li>
+          <li class="talk">
+            <p class="talk__meta">Southern Company Technical Conference &middot; 300+ engineers</p>
+            <h3 class="talk__title">Hardware controllers in distributed control systems</h3>
+            <p class="talk__text">Represented Emerson Power &amp; Water Solutions, presenting on controller hardware to Southern Company's engineering organisation.</p>
+          </li>
+          <li class="talk">
+            <p class="talk__meta">Emerson Ovation Users Conference</p>
+            <h3 class="talk__title">Why time synchronisation matters in distributed systems</h3>
+            <p class="talk__text">On clock drift, sequence-of-events data, and the debugging nightmares that follow when distributed systems disagree about when things happened.</p>
+          </li>
+          <li class="talk">
+            <p class="talk__meta">Regional Ovation technology fair &middot; Florida</p>
+            <h3 class="talk__title">Ovation technology briefing</h3>
+            <p class="talk__text">Presented to 30+ customers at the regional technology fair.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BACKGROUND ============ -->
+    <section class="section section--alt" id="background">
+      <div class="wrap">
+        <h2 class="section__title">Background</h2>
+
         <div class="split">
-
           <div>
-            <h2 class="section__title">Education</h2>
+            <h3 class="sub">Roles</h3>
+            <ul class="list">
+              <li class="list__item">
+                <p class="list__title">Software Engineering Manager, Industrial Automation &amp; Robotics</p>
+                <p class="list__meta">Intel, Heredia &middot; 2025 &mdash; a team of 8 across PLC, IoT and robotics</p>
+              </li>
+              <li class="list__item">
+                <p class="list__title">Industrial Automation &amp; Robotics Product Owner</p>
+                <p class="list__meta">Intel, Heredia &middot; 2022&ndash;2025</p>
+              </li>
+              <li class="list__item">
+                <p class="list__title">Senior Distributed Control System Consultant</p>
+                <p class="list__meta">Emerson Electric, San Jos&eacute; &middot; 2019&ndash;2022 &mdash; technical lead for 35+ engineers</p>
+              </li>
+              <li class="list__item">
+                <p class="list__title">Distributed Control System Team Lead</p>
+                <p class="list__meta">Emerson Electric, San Jos&eacute; &middot; 2014&ndash;2019 &mdash; a team of 8, commissioning across the Americas</p>
+              </li>
+            </ul>
+
+            <h3 class="sub">Education</h3>
             <ul class="list">
               <li class="list__item">
                 <p class="list__title">M.Sc. Mechanical Engineering &mdash; Energy Management</p>
-                <p class="list__meta">Universidad de Costa Rica, San Jos&eacute; &middot; 2025&ndash;present</p>
+                <p class="list__meta">Universidad de Costa Rica &middot; 2025&ndash;present</p>
               </li>
               <li class="list__item">
                 <p class="list__title">B.A. Electromechanical Engineering</p>
-                <p class="list__meta">Universidad Latina de Costa Rica, Heredia &middot; 2013&ndash;2017</p>
+                <p class="list__meta">Universidad Latina de Costa Rica &middot; 2013&ndash;2017</p>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 class="section__title">Certifications &amp; memberships</h2>
+            <h3 class="sub">Certifications &amp; memberships</h3>
             <ul class="list">
               <li class="list__item">
                 <p class="list__title">ISA Senior Member</p>
@@ -281,48 +406,16 @@
                 <p class="list__title">Wilderness First Responder (AIDER)</p>
                 <p class="list__meta">Search &amp; rescue</p>
               </li>
-              <li class="list__item">
-                <p class="list__title">Native English &amp; Spanish speaker</p>
-                <p class="list__meta">Bilingual, professional working environments in both</p>
-              </li>
             </ul>
+
+            <h3 class="sub">Away from the plant floor</h3>
+            <p class="muted">
+              Wilderness survival and climbing instructor at Camp Highlands for Boys, Wisconsin,
+              every summer. Communications and website work for the Colectivo Agroecol&oacute;gico
+              de Zurqu&iacute;. Ham radio, Meshtastic and The Things Network, which turn out to be
+              the same hobby as animal tracking and wildlife corridor mapping.
+            </p>
           </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ BEYOND WORK ============ -->
-    <section class="section" id="beyond">
-      <div class="wrap">
-        <h2 class="section__title">Beyond work</h2>
-        <div class="cards cards--wide">
-
-          <article class="card">
-            <h3 class="card__title">Colectivo Agroecol&oacute;gico de Zurqu&iacute;</h3>
-            <p class="card__meta">Active member &middot; Dec 2025&ndash;present</p>
-            <p class="card__text">
-              Communications and website development for the collective, plus engineering consulting on its projects.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Camp Highlands for Boys</h3>
-            <p class="card__meta">Seasonal, every year &middot; Sayner, Wisconsin</p>
-            <p class="card__text">
-              Wilderness survival and orienteering instructor; climbing and adventure instructor, belay certified.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Amateur ecology</h3>
-            <p class="card__meta">Ongoing</p>
-            <p class="card__text">
-              Animal tracking and wildlife corridor mapping &mdash; where the radios, the trail skills and the data
-              habits all end up in the same place.
-            </p>
-          </article>
-
         </div>
       </div>
     </section>
@@ -330,10 +423,11 @@
     <!-- ============ CONTACT ============ -->
     <section class="section section--contact" id="contact">
       <div class="wrap">
-        <h2 class="section__title">Get in touch</h2>
+        <h2 class="section__title">Start a conversation</h2>
         <p class="contact__text">
-          Happy to talk about industrial data, SCADA modernisation, robotics on the plant floor &mdash;
-          or where to find good trail in Costa Rica.
+          If you have industrial data that isn't going anywhere useful, a control system due for
+          modernisation, or a robotics or AI idea you want scoped honestly &mdash; get in touch.
+          Happy to talk about trails in Costa Rica too.
         </p>
         <ul class="contact__links">
           <li><a class="btn btn--primary" href="mailto:atkm2891@gmail.com">atkm2891@gmail.com</a></li>

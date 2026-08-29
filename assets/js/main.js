@@ -74,6 +74,38 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 
+  /* ---- click-to-load YouTube embeds ----
+     The markup ships a thumbnail and a button; the iframe (and everything
+     YouTube sets along with it) only arrives once someone asks to play. */
+  document.querySelectorAll(".video[data-video-id]").forEach(function (box) {
+    var button = box.querySelector(".video__button");
+    if (!button) return;
+
+    // maxresdefault.jpg doesn't exist for every video; hqdefault.jpg always does
+    var thumb = box.querySelector(".video__thumb");
+    if (thumb) {
+      thumb.addEventListener("error", function () {
+        var id = box.getAttribute("data-video-id");
+        var fallback = "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/hqdefault.jpg";
+        if (thumb.src === fallback) { thumb.hidden = true; return; }
+        thumb.src = fallback;
+      });
+    }
+
+    button.addEventListener("click", function () {
+      var id = box.getAttribute("data-video-id");
+      var frame = document.createElement("iframe");
+      frame.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
+                  "?autoplay=1&rel=0";
+      frame.title = box.getAttribute("data-video-title") || "Embedded video";
+      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      box.replaceChildren(frame);
+      frame.focus();
+    });
+  });
+
   /* ---- footer year ---- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
