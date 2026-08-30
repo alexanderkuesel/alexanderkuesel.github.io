@@ -56,7 +56,7 @@ banner comment like `<!-- ============ PROJECTS ============ -->`.
 
 | file | used for |
 | --- | --- |
-| `alexander-kuesel.jpg` | hero portrait, 800×800 |
+| `alexander-kuesel.jpg` | hero portrait, 900×900, cropped square around the head |
 | `ovation-users-conference.jpg` | speaking section, 1600×882 |
 | `IMG_3872.JPG`, `IMG_0173.JPEG` | the originals, kept as sources; not referenced by the page |
 
