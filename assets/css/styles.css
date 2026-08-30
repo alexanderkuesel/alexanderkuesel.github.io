@@ -547,6 +547,84 @@ a:hover { text-decoration-thickness: 2px; }
 .list__title { font-weight: 600; margin: 0 0 .15rem; }
 .list__meta { font-size: .88rem; color: var(--text-faint); margin: 0; }
 
+/* ---------- employers ---------- */
+
+/* C — full-width band per employer: tinted header strip, roles in rows */
+.employers {
+  display: grid;
+  gap: .9rem;
+  margin-bottom: 2rem;
+}
+
+.employer {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.employer__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  padding: .8rem 1.3rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--accent-line);
+}
+.employer__name {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+.employer__meta {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.employer__roles { list-style: none; margin: 0; padding: 0; background: var(--surface); }
+.role {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: .2rem 1.5rem;
+  padding: .85rem 1.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.role:last-child { border-bottom: 0; }
+
+.role__dates {
+  grid-row: 1 / span 2;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .05em;
+  color: var(--accent);
+  margin: .15rem 0 0;
+}
+.role__title { font-weight: 600; margin: 0; }
+.role__note { font-size: .88rem; color: var(--text-faint); margin: 0; }
+
+@media (max-width: 40rem) {
+  .role { grid-template-columns: 1fr; }
+  .role__dates { grid-row: auto; }
+}
+
+/* ---------- end employers ---------- */
+
+
+
+
+
+
+
+
+
+
+
 /* ---------- outside work ---------- */
 
 .pursuits {
