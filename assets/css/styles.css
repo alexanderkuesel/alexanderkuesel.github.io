@@ -1,7 +1,8 @@
 /* =========================================================
    Alexander Kuesel — personal site
    Design tokens first, then layout, then components.
-   Light is the base palette; dark overrides only the tokens.
+   Dark is what visitors get by default; the light palette is the base that
+   the toggle switches back to.
 
    Accent orange is #EC6530, borrowed from the Rhizomatix site,
    along with its rgba(236, 101, 48, …) tints. Light mode uses a
@@ -10,6 +11,8 @@
    ========================================================= */
 
 :root {
+  color-scheme: light;
+
   /* colour */
   --bg:            #fbfaf9;
   --bg-alt:        #f4f2ef;
@@ -33,29 +36,14 @@
   --wrap: 68rem;
   --measure: 38rem;
   --radius: 14px;
-  --section-y: clamp(3.5rem, 8vw, 6.5rem);
+  --section-y: clamp(2.5rem, 5vw, 4.25rem);
 }
 
-/* Dark mode goes properly black, and the brand orange carries the accents. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:            #050505;
-    --bg-alt:        #0b0805;
-    --surface:       #120900;
-    --border:        rgba(236, 101, 48, .20);
-    --text:          #f2efe9;
-    --text-soft:     #b9b2a8;
-    --text-faint:    #8d857a;
-    --accent:        #ec6530;
-    --accent-bright: #ec6530;
-    --accent-soft:   rgba(236, 101, 48, .12);
-    --accent-line:   rgba(236, 101, 48, .34);
-    --accent-text:   #0a0603;
-    --shadow:        0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px -12px rgba(0, 0, 0, .8);
-  }
-}
-
-:root[data-theme="dark"] {
+/* Dark is the page's default, whatever the visitor's system is set to: the
+   :not() outranks the plain :root, so the light palette above only takes
+   effect once someone explicitly picks light with the toggle. */
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
   --bg:            #050505;
   --bg-alt:        #0b0805;
   --surface:       #120900;
@@ -92,7 +80,7 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -247,7 +235,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- hero ---------- */
 
 .hero {
-  padding-block: clamp(4rem, 12vw, 8rem) clamp(3rem, 8vw, 5rem);
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem);
   background: radial-gradient(60rem 32rem at 12% -10%, var(--accent-soft), transparent 65%);
 }
 
@@ -259,7 +247,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .hero__photo {
-  width: clamp(10rem, 20vw, 16.5rem);
+  width: clamp(12rem, 24vw, 20rem);
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
@@ -270,7 +258,7 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 52rem) {
   .hero__inner { grid-template-columns: 1fr; }
   .hero__text { order: 2; }
-  .hero__photo { width: 8rem; margin-bottom: .5rem; }
+  .hero__photo { width: 10rem; margin-bottom: .5rem; }
 }
 
 .hero__eyebrow {
@@ -279,14 +267,14 @@ a:hover { text-decoration-thickness: 2px; }
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--text-faint);
-  margin-bottom: 1.25rem;
+  margin-bottom: .75rem;
 }
 
 .hero__name {
   font-size: clamp(2.15rem, 6vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -.035em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-wrap: balance;
 }
 
@@ -294,14 +282,14 @@ a:hover { text-decoration-thickness: 2px; }
   max-width: var(--measure);
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   color: var(--text-soft);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero__links { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .hero__meta {
-  margin: 2.25rem 0 0;
-  padding-top: 1.5rem;
+  margin: 1.5rem 0 0;
+  padding-top: 1rem;
   border-top: 1px solid var(--border);
   font-family: var(--font-mono);
   font-size: .8rem;
@@ -344,16 +332,19 @@ a:hover { text-decoration-thickness: 2px; }
 
 .section__lead {
   max-width: var(--measure);
-  font-size: 1.075rem;
+  font-size: 1.05rem;
   color: var(--text-soft);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.6rem;
 }
+
+/* the leads are optional; an empty one shouldn't leave a hole */
+.section__lead:empty { display: none; }
 
 .sub {
   font-size: .95rem;
   font-weight: 650;
   letter-spacing: .02em;
-  margin: 2.25rem 0 1rem;
+  margin: 1.75rem 0 .75rem;
 }
 .sub:first-child { margin-top: 0; }
 
@@ -385,7 +376,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .service {
   background: var(--bg);
-  padding: 1.75rem;
+  padding: 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: .75rem;
@@ -409,7 +400,7 @@ a:hover { text-decoration-thickness: 2px; }
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .project {
@@ -417,11 +408,11 @@ a:hover { text-decoration-thickness: 2px; }
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent-bright);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.3rem 1.4rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  gap: .5rem;
 }
 
 .project__org {
@@ -443,7 +434,7 @@ a:hover { text-decoration-thickness: 2px; }
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 2.5rem);
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 52rem) {
@@ -507,7 +498,7 @@ a:hover { text-decoration-thickness: 2px; }
 .talk-feature__body .talk__title { font-size: 1.35rem; margin-bottom: .6rem; }
 
 .talk-photo {
-  margin: 0 0 2.5rem;
+  margin: 0 0 1.75rem;
 }
 .talk-photo img {
   width: 100%;
@@ -525,8 +516,8 @@ a:hover { text-decoration-thickness: 2px; }
 .talks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 1.75rem 2rem;
-  padding-top: 2rem;
+  gap: 1.4rem 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
 
@@ -546,11 +537,11 @@ a:hover { text-decoration-thickness: 2px; }
 .split {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-  gap: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(1.5rem, 4vw, 2.75rem);
   align-items: start;
 }
 
-.list { display: grid; gap: 1.1rem; }
+.list { display: grid; gap: .8rem; }
 .list__item { padding-left: 1rem; border-left: 2px solid var(--border); }
 .list__item:hover { border-left-color: var(--accent-bright); }
 .list__title { font-weight: 600; margin: 0 0 .15rem; }
@@ -561,7 +552,7 @@ a:hover { text-decoration-thickness: 2px; }
 .pursuits {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 /* same card as a project, without the orange rule down the side —
@@ -570,11 +561,11 @@ a:hover { text-decoration-thickness: 2px; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.3rem 1.4rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  gap: .5rem;
 }
 
 .pursuit__meta {
@@ -592,7 +583,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- contact ---------- */
 
 .section--contact { background: var(--bg-alt); }
-.contact__text { max-width: var(--measure); color: var(--text-soft); font-size: 1.075rem; margin-bottom: 1.75rem; }
+.contact__text { max-width: var(--measure); color: var(--text-soft); font-size: 1.05rem; margin-bottom: 1.25rem; }
 .contact__links { display: flex; flex-wrap: wrap; gap: .75rem; }
 .section--contact .btn { background: var(--bg); }
 .section--contact .btn--primary { background: var(--accent-bright); }
@@ -600,7 +591,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---------- footer ---------- */
 
 .site-footer {
-  padding-block: 2.5rem;
+  padding-block: 1.75rem;
   border-top: 1px solid var(--accent-line);
   font-size: .88rem;
   color: var(--text-faint);
