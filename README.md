@@ -29,9 +29,15 @@ banner comment like `<!-- ============ PROJECTS ============ -->`.
 - **Add something to Outside Work**: copy an `<article class="pursuit">…</article>`
   block. Same card as a project, minus the orange rule down the side.
 - **Colours and spacing**: the custom properties in the `:root` block at the top of
-  `assets/css/styles.css`. The palette is defined three times — once for light, then
-  again under `prefers-color-scheme: dark` and under `[data-theme="dark"]` for the
-  manual toggle — so a colour change needs making in all three.
+  `assets/css/styles.css`. The palette is defined twice: `:root` holds the light
+  values, and `:root:not([data-theme="light"])` holds the dark ones. The `:not()`
+  outranks the plain `:root`, so **dark is what every visitor gets by default**,
+  whatever their system is set to, and the light palette only applies once someone
+  picks light with the toggle. A colour change needs making in both blocks.
+
+  The choice is stored in `localStorage` under `ak-theme`, and a small inline script
+  in `<head>` applies it before first paint so a returning light-mode visitor doesn't
+  see a flash of dark.
 
   The accent orange is `#EC6530`, taken from the Rhizomatix site, along with its
   `rgba(236, 101, 48, …)` tints. It splits into two tokens because the brand orange

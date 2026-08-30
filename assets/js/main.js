@@ -2,7 +2,9 @@
 (function () {
   "use strict";
 
-  /* ---- colour theme: system by default, remembered once toggled ---- */
+  /* ---- colour theme: dark by default, remembered once toggled ----
+     The inline script in <head> has usually applied a stored preference
+     before first paint; this repeats it harmlessly if that is ever removed. */
   var root = document.documentElement;
   var STORE_KEY = "ak-theme";
 
@@ -19,8 +21,7 @@
   var themeToggle = document.querySelector(".theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
-      var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var current = root.getAttribute("data-theme") || (systemDark ? "dark" : "light");
+      var current = root.getAttribute("data-theme") || "dark";
       var next = current === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       storeTheme(next);
