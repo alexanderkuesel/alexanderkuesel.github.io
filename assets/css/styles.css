@@ -547,6 +547,69 @@ a:hover { text-decoration-thickness: 2px; }
 .list__title { font-weight: 600; margin: 0 0 .15rem; }
 .list__meta { font-size: .88rem; color: var(--text-faint); margin: 0; }
 
+/* ---------- employers ---------- */
+
+/* A — two cards side by side, one per employer */
+.employers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.employer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.employer__head {
+  padding: 1.1rem 1.4rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--accent-line);
+}
+.employer__name {
+  font-size: 1.5rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+.employer__meta {
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: .25rem 0 0;
+}
+
+.employer__roles { list-style: none; margin: 0; padding: 0 1.4rem; }
+.role { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.role:last-child { border-bottom: 0; }
+
+.role__dates {
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  letter-spacing: .05em;
+  color: var(--accent);
+  margin: 0 0 .2rem;
+}
+.role__title { font-weight: 600; margin: 0 0 .15rem; }
+.role__note { font-size: .88rem; color: var(--text-faint); margin: 0; }
+
+/* ---------- end employers ---------- */
+
+
+
+
+
+
+
+
+
+
 /* ---------- outside work ---------- */
 
 .pursuits {
