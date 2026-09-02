@@ -532,6 +532,53 @@ a:hover { text-decoration-thickness: 2px; }
 .talk__title { font-size: 1.05rem; font-weight: 650; margin-bottom: .4rem; }
 .talk__text { color: var(--text-soft); font-size: .95rem; margin: 0; }
 
+/* ---------- compendium ---------- */
+
+.compendium {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
+}
+
+.compendium__kicker {
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 .35rem;
+}
+.compendium__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  margin: 0 0 .5rem;
+  text-wrap: balance;
+}
+.compendium__text {
+  max-width: var(--measure);
+  color: var(--text-soft);
+  font-size: .96rem;
+  margin: 0;
+}
+
+.compendium__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+.compendium .btn { background: var(--bg); }
+.compendium .btn--primary { background: var(--accent-bright); }
+
+@media (max-width: 52rem) {
+  .compendium { grid-template-columns: 1fr; align-items: start; }
+}
+
 /* ---------- background lists ---------- */
 
 .split {
